@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://sfbq63qctweo"
+path="res://.godot/imported/tphoenix-sweating(b).gif-4c9442012ec1301ac2c39c6d7b8b1bf8.tres"
+
+[deps]
+
+source_file="res://Assets/Engine/HD/PW/tphoenix-sweating(b).gif"
+dest_files=["res://.godot/imported/tphoenix-sweating(b).gif-4c9442012ec1301ac2c39c6d7b8b1bf8.tres"]
+
+[params]
+
+frames_per_second=30

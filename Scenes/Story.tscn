@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://cucencgbsskxl"]
+
+[ext_resource type="Script" path="res://Scripts/Story.gd" id="1_rso8s"]
+[ext_resource type="FontFile" uid="uid://c38n0e1lyr6sm" path="res://Assets/Engine/Fonts/HD-Textbox.otf" id="2_3lwna"]
+[ext_resource type="Shader" path="res://Assets/Engine/Shaders/Blur.gdshader" id="2_ot8kb"]
+[ext_resource type="Texture2D" uid="uid://b6jwmmw5c4yma" path="res://Assets/Engine/Inline/CourtRoom.png" id="3_8ydcv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e277k"]
+shader = ExtResource("2_ot8kb")
+shader_parameter/strength = 9
+shader_parameter/darkness = 0.163
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3of6s"]
+atlas = ExtResource("3_8ydcv")
+region = Rect2(9600, 0, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p5ivl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3of6s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Story" type="Node2D"]
+script = ExtResource("1_rso8s")
+
+[node name="Bg" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="CourtBG" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_e277k")
+sprite_frames = SubResource("SpriteFrames_p5ivl")
+centered = false
+
+[node name="CL" type="CanvasLayer" parent="."]
+
+[node name="LoadText" type="RichTextLabel" parent="CL"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.5
+offset_top = -59.0
+offset_right = 208.5
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_3lwna")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center]Loading"
+fit_content = true
+
+[connection signal="tdone" from="." to="." method="_on_tdone"]

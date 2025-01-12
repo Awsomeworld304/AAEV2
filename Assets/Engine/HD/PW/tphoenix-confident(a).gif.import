@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://dlpudc6yhhmnc"
+path="res://.godot/imported/tphoenix-confident(a).gif-23245e82fe569703ec94cca017ce5094.tres"
+
+[deps]
+
+source_file="res://Assets/Engine/HD/PW/tphoenix-confident(a).gif"
+dest_files=["res://.godot/imported/tphoenix-confident(a).gif-23245e82fe569703ec94cca017ce5094.tres"]
+
+[params]
+
+frames_per_second=30

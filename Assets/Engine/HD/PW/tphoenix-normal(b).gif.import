@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://dhb2jfgoig4o"
+path="res://.godot/imported/tphoenix-normal(b).gif-93e8b06780154549b82d9673220cfc72.tres"
+
+[deps]
+
+source_file="res://Assets/Engine/HD/PW/tphoenix-normal(b).gif"
+dest_files=["res://.godot/imported/tphoenix-normal(b).gif-93e8b06780154549b82d9673220cfc72.tres"]
+
+[params]
+
+frames_per_second=30

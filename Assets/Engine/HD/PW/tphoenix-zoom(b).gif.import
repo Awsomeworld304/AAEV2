@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://gh1vbjwul2im"
+path="res://.godot/imported/tphoenix-zoom(b).gif-1943ede5cf9eb91af3ea877cd6f58f47.tres"
+
+[deps]
+
+source_file="res://Assets/Engine/HD/PW/tphoenix-zoom(b).gif"
+dest_files=["res://.godot/imported/tphoenix-zoom(b).gif-1943ede5cf9eb91af3ea877cd6f58f47.tres"]
+
+[params]
+
+frames_per_second=30

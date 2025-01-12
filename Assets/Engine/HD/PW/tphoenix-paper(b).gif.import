@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://b1csc6quwyawi"
+path="res://.godot/imported/tphoenix-paper(b).gif-6ef18dcf31c61d11a3c9c133ac2efbe7.tres"
+
+[deps]
+
+source_file="res://Assets/Engine/HD/PW/tphoenix-paper(b).gif"
+dest_files=["res://.godot/imported/tphoenix-paper(b).gif-6ef18dcf31c61d11a3c9c133ac2efbe7.tres"]
+
+[params]
+
+frames_per_second=30

@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://73ndr6aqb46p"
+path="res://.godot/imported/tphoenix-superobjection.gif-d0f2f58fa6bafc7ab6d05e3ab5434d5a.tres"
+
+[deps]
+
+source_file="res://Assets/Engine/HD/PW/tphoenix-superobjection.gif"
+dest_files=["res://.godot/imported/tphoenix-superobjection.gif-d0f2f58fa6bafc7ab6d05e3ab5434d5a.tres"]
+
+[params]
+
+frames_per_second=30

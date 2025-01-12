@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://ch8xh2f3yocih"
+path="res://.godot/imported/tphoenix-ohcrap.gif-2cd24cdb9f3a432e1a79a3b98a10c200.tres"
+
+[deps]
+
+source_file="res://Assets/Engine/HD/PW/tphoenix-ohcrap.gif"
+dest_files=["res://.godot/imported/tphoenix-ohcrap.gif-2cd24cdb9f3a432e1a79a3b98a10c200.tres"]
+
+[params]
+
+frames_per_second=30

@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://dlya8r63h3rsv"
+path="res://.godot/imported/tphoenix-objection(b).gif-fed75a6adbc422fd4ceb4e36acc6570c.tres"
+
+[deps]
+
+source_file="res://Assets/Engine/HD/PW/tphoenix-objection(b).gif"
+dest_files=["res://.godot/imported/tphoenix-objection(b).gif-fed75a6adbc422fd4ceb4e36acc6570c.tres"]
+
+[params]
+
+frames_per_second=30

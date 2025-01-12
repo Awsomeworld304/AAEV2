@@ -1,0 +1,111 @@
+[gd_scene load_steps=8 format=3 uid="uid://lruem12ivfrv"]
+
+[ext_resource type="Script" path="res://Scripts/Error.gd" id="1_0euxn"]
+[ext_resource type="Texture2D" uid="uid://b6jwmmw5c4yma" path="res://Assets/Engine/Inline/CourtRoom.png" id="1_lq28a"]
+[ext_resource type="Shader" path="res://Assets/Engine/Shaders/Blur.gdshader" id="2_1ikxi"]
+[ext_resource type="FontFile" uid="uid://c38n0e1lyr6sm" path="res://Assets/Engine/Fonts/HD-Textbox.otf" id="4_bcpau"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bqenw"]
+shader = ExtResource("2_1ikxi")
+shader_parameter/strength = 9
+shader_parameter/darkness = 0.35
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3of6s"]
+atlas = ExtResource("1_lq28a")
+region = Rect2(9600, 0, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dmq2u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3of6s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Error" type="Node2D"]
+script = ExtResource("1_0euxn")
+
+[node name="CourtBG" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_bqenw")
+sprite_frames = SubResource("SpriteFrames_dmq2u")
+centered = false
+
+[node name="msg" type="CanvasLayer" parent="."]
+
+[node name="ErrorTite" type="RichTextLabel" parent="msg"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -624.5
+offset_top = 50.0
+offset_right = 624.5
+offset_bottom = 140.0
+grow_horizontal = 2
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("4_bcpau")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "An error has occured during loading!"
+fit_content = true
+
+[node name="Error" type="RichTextLabel" parent="msg"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -550.0
+offset_top = -305.0
+offset_right = 551.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_bcpau")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center][color=red]
+Error(0):
+[color=white]
+The type 'null' cannot be found!
+Are you using an improper class?
+This is a test error.
+Heres some more text that makes the textbox get bigger.
+"
+
+[node name="OkText" type="RichTextLabel" parent="msg"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -305.0
+offset_top = 110.0
+offset_right = 305.0
+offset_bottom = 217.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_bcpau")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]
+Presss OK to return to title screen."
+
+[node name="Ok" type="Button" parent="msg"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.5
+offset_top = 273.5
+offset_right = 80.5
+offset_bottom = 326.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "OK"
+
+[connection signal="button_up" from="msg/Ok" to="." method="_on_ok_button_button_up"]

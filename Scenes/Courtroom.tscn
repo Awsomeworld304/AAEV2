@@ -1,0 +1,474 @@
+[gd_scene load_steps=39 format=3 uid="uid://fv8we7qg44ba"]
+
+[ext_resource type="Texture2D" uid="uid://b6jwmmw5c4yma" path="res://Assets/Engine/Inline/CourtRoom.png" id="1_j2hkm"]
+[ext_resource type="Script" path="res://Scripts/Courtroom.gd" id="1_kusd2"]
+[ext_resource type="Texture2D" uid="uid://baahy1ogcgcsu" path="res://Assets/Engine/Inline/Benches.png" id="2_dxuk1"]
+[ext_resource type="Texture2D" uid="uid://cd1dwyaf4a8ww" path="res://Assets/Engine/Inline/CourtRoomTransitions.png" id="3_lrveu"]
+[ext_resource type="SpriteFrames" uid="uid://uaorvhwvm4bf" path="res://Objects/PW/PW.tres" id="3_vcppk"]
+[ext_resource type="Animation" uid="uid://swjl8mo1s8ww" path="res://Objects/PW/blink_oc-loop.res" id="6_0g0jm"]
+[ext_resource type="Texture2D" uid="uid://cdocxravqmjia" path="res://Assets/Engine/Inline/textbox-hd.png" id="6_8j2lv"]
+[ext_resource type="FontFile" uid="uid://c38n0e1lyr6sm" path="res://Assets/Engine/Fonts/HD-Textbox.otf" id="7_4tjk5"]
+[ext_resource type="Animation" uid="uid://dsk4w6ko3cx2r" path="res://Objects/PW/talk_normal-loop.res" id="7_bkead"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o37fm"]
+atlas = ExtResource("3_lrveu")
+region = Rect2(0, 0, 2560, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdjnc"]
+atlas = ExtResource("3_lrveu")
+region = Rect2(2560, 0, 2560, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jbi4g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o37fm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdjnc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rhga"]
+atlas = ExtResource("1_j2hkm")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wafw"]
+atlas = ExtResource("1_j2hkm")
+region = Rect2(5760, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13p40"]
+atlas = ExtResource("1_j2hkm")
+region = Rect2(3840, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5hsp"]
+atlas = ExtResource("1_j2hkm")
+region = Rect2(7680, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2igu6"]
+atlas = ExtResource("1_j2hkm")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lcc12"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rhga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wafw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13p40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5hsp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2igu6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84ayp"]
+atlas = ExtResource("2_dxuk1")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wk8v"]
+atlas = ExtResource("2_dxuk1")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ww2wo"]
+atlas = ExtResource("2_dxuk1")
+region = Rect2(3840, 0, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aapdi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84ayp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wk8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ww2wo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_o0y2l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CourtBGDef/Defense:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ahjdr"]
+_data = {
+"RESET": SubResource("Animation_o0y2l"),
+"blink_oc-loop": ExtResource("6_0g0jm"),
+"talk_normal-loop": ExtResource("7_bkead")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_4hvfy"]
+font = ExtResource("7_4tjk5")
+font_size = 42
+
+[sub_resource type="GDScript" id="GDScript_dgp6a"]
+resource_name = "TextboxTextEffect"
+script/source = "extends RichTextLabel
+
+signal typeStart;
+signal typeFinish;
+
+func type():
+	typeStart.emit();
+	#var tm = Timer.new();
+	#tm.start(1);
+	#await tm.is_stopped();
+	visible_ratio = 0.0;
+	text = GameManager.curText;
+	var tween: Tween = create_tween();
+	tween.set_speed_scale(0.8);
+	tween.tween_property(self, \"visible_ratio\", 1.0, 2.0).from(0.0);
+	await tween.finished;
+	#typeFinish.emit();
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	type();
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	
+	pass
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d575n"]
+bg_color = Color(0, 0, 0, 0.462745)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v8w56"]
+font = ExtResource("7_4tjk5")
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m1qgd"]
+font = ExtResource("7_4tjk5")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_g7ltg"]
+font = ExtResource("7_4tjk5")
+font_size = 24
+
+[sub_resource type="Animation" id="Animation_jl75b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameCam:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h3ui8"]
+resource_name = "def_to_proc"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameCam:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(6990, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c8v0a"]
+resource_name = "def_to_wit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameCam:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(3494, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mexxj"]
+resource_name = "to_def"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameCam:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m3wmf"]
+resource_name = "to_judge"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameCam:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 0,
+"values": [Vector2(0, -1080)]
+}
+
+[sub_resource type="Animation" id="Animation_0l4ph"]
+resource_name = "to_side_def"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameCam:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 0,
+"values": [Vector2(0, 1080)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l8rol"]
+_data = {
+"RESET": SubResource("Animation_jl75b"),
+"def_to_proc": SubResource("Animation_h3ui8"),
+"def_to_wit": SubResource("Animation_c8v0a"),
+"to_def": SubResource("Animation_mexxj"),
+"to_judge": SubResource("Animation_m3wmf"),
+"to_side_def": SubResource("Animation_0l4ph")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x5tb4"]
+_data = {
+"blink_oc-loop": ExtResource("6_0g0jm"),
+"talk_normal-loop": ExtResource("7_bkead")
+}
+
+[node name="Courtroom" type="Node2D"]
+script = ExtResource("1_kusd2")
+
+[node name="def_to_wit" type="AnimatedSprite2D" parent="."]
+position = Vector2(1895, 0)
+sprite_frames = SubResource("SpriteFrames_jbi4g")
+centered = false
+
+[node name="wit_to_proc" type="AnimatedSprite2D" parent="def_to_wit"]
+position = Vector2(2559, 0)
+sprite_frames = SubResource("SpriteFrames_jbi4g")
+frame = 1
+centered = false
+
+[node name="CourtBGDef" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lcc12")
+centered = false
+
+[node name="Defense" type="AnimatedSprite2D" parent="CourtBGDef"]
+sprite_frames = ExtResource("3_vcppk")
+animation = &"idle"
+centered = false
+
+[node name="Bench" type="AnimatedSprite2D" parent="CourtBGDef"]
+sprite_frames = SubResource("SpriteFrames_aapdi")
+centered = false
+
+[node name="CourtBGjudge" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1080)
+sprite_frames = SubResource("SpriteFrames_lcc12")
+frame = 3
+centered = false
+
+[node name="CourtBGdef-side" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1080)
+sprite_frames = SubResource("SpriteFrames_lcc12")
+frame = 4
+centered = false
+
+[node name="CourtBGwit" type="AnimatedSprite2D" parent="."]
+position = Vector2(3494, 0)
+sprite_frames = SubResource("SpriteFrames_lcc12")
+frame = 1
+centered = false
+
+[node name="WitBench" type="AnimatedSprite2D" parent="CourtBGwit"]
+sprite_frames = SubResource("SpriteFrames_aapdi")
+frame = 1
+centered = false
+
+[node name="CourtBGproc" type="AnimatedSprite2D" parent="."]
+position = Vector2(6990, 0)
+sprite_frames = SubResource("SpriteFrames_lcc12")
+frame = 2
+centered = false
+
+[node name="ProcBench" type="AnimatedSprite2D" parent="CourtBGproc"]
+sprite_frames = SubResource("SpriteFrames_aapdi")
+frame = 2
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ahjdr")
+}
+autoplay = "blink_oc-loop"
+
+[node name="GameCam" type="Camera2D" parent="."]
+offset = Vector2(960, 540)
+
+[node name="Textbox" type="Sprite2D" parent="GameCam"]
+modulate = Color(1, 1, 1, 0.74902)
+texture = ExtResource("6_8j2lv")
+centered = false
+
+[node name="Name" type="Label" parent="GameCam/Textbox"]
+offset_left = 182.0
+offset_top = 689.0
+offset_right = 450.0
+offset_bottom = 738.0
+theme_override_fonts/font = ExtResource("7_4tjk5")
+theme_override_font_sizes/font_size = 42
+text = "Phoenix"
+label_settings = SubResource("LabelSettings_4hvfy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="RichTextLabel" parent="GameCam/Textbox"]
+offset_left = 384.0
+offset_top = 763.0
+offset_right = 1202.0
+offset_bottom = 989.0
+theme_override_fonts/normal_font = ExtResource("7_4tjk5")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[color=#68c0f0](Boy am I nervous for this code to work!)"
+scroll_active = false
+shortcut_keys_enabled = false
+script = SubResource("GDScript_dgp6a")
+
+[node name="Menu" type="CanvasLayer" parent="GameCam"]
+visible = false
+
+[node name="Panel" type="Panel" parent="GameCam/Menu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -350.0
+offset_right = 300.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cams" type="Label" parent="GameCam/Menu/Panel"]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 57.0
+offset_right = 323.0
+offset_bottom = 88.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_d575n")
+text = "Defense"
+label_settings = SubResource("LabelSettings_v8w56")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CamRight" type="Button" parent="GameCam/Menu/Panel/Cams"]
+layout_mode = 0
+offset_left = 111.0
+offset_right = 142.0
+offset_bottom = 31.0
+text = ">"
+
+[node name="CamLeft" type="Button" parent="GameCam/Menu/Panel/Cams"]
+layout_mode = 0
+offset_left = -31.0
+offset_bottom = 31.0
+text = "<"
+
+[node name="CamLabel" type="Label" parent="GameCam/Menu/Panel/Cams"]
+layout_mode = 0
+offset_left = -184.0
+offset_top = 4.0
+offset_right = -62.0
+offset_bottom = 27.0
+text = "Cam Switch"
+label_settings = SubResource("LabelSettings_m1qgd")
+
+[node name="Submit" type="Button" parent="GameCam/Menu/Panel/Cams"]
+offset_left = 168.0
+offset_right = 237.0
+offset_bottom = 31.0
+text = "SWITCH"
+
+[node name="Title" type="ColorRect" parent="GameCam/Menu/Panel"]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 0.627451)
+
+[node name="Label" type="Label" parent="GameCam/Menu/Panel/Title"]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 40.0
+text = "Debug Menu"
+label_settings = SubResource("LabelSettings_g7ltg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="cam" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_l8rol")
+}
+
+[node name="PENIS" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_x5tb4")
+}
+
+[connection signal="typeFinish" from="GameCam/Textbox/Text" to="." method="_on_text_type_finish"]
+[connection signal="typeStart" from="GameCam/Textbox/Text" to="." method="_on_text_type_start"]
+[connection signal="button_up" from="GameCam/Menu/Panel/Cams/CamRight" to="." method="_on_cam_right_button_up"]
+[connection signal="button_up" from="GameCam/Menu/Panel/Cams/CamLeft" to="." method="_on_cam_left_button_up"]
+[connection signal="button_up" from="GameCam/Menu/Panel/Cams/Submit" to="." method="_on_submit_button_up"]

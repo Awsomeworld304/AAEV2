@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://ci6uvyjd8gh40"
+path="res://.godot/imported/tphoenix-sheepish(a).gif-22de21cbf62aa04ca2bfcfb176563d19.tres"
+
+[deps]
+
+source_file="res://Assets/Engine/HD/PW/tphoenix-sheepish(a).gif"
+dest_files=["res://.godot/imported/tphoenix-sheepish(a).gif-22de21cbf62aa04ca2bfcfb176563d19.tres"]
+
+[params]
+
+frames_per_second=30

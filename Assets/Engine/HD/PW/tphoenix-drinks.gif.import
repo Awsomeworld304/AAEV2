@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://y1ywsqkaqhp"
+path="res://.godot/imported/tphoenix-drinks.gif-46d1fc6fd62f0772e7b9cd3c494898af.tres"
+
+[deps]
+
+source_file="res://Assets/Engine/HD/PW/tphoenix-drinks.gif"
+dest_files=["res://.godot/imported/tphoenix-drinks.gif-46d1fc6fd62f0772e7b9cd3c494898af.tres"]
+
+[params]
+
+frames_per_second=30

@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://bchsjx42oy71w"
+path="res://.godot/imported/tphoenix-pointing(a).gif-e873fb9beaa667794696d3f3f3681d28.tres"
+
+[deps]
+
+source_file="res://Assets/Engine/HD/PW/tphoenix-pointing(a).gif"
+dest_files=["res://.godot/imported/tphoenix-pointing(a).gif-e873fb9beaa667794696d3f3f3681d28.tres"]
+
+[params]
+
+frames_per_second=30

@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://b6qe1mo3libwu"
+path="res://.godot/imported/tphoenix-cup(b).gif-b024f73bdc740841ec25ed0c14c2b915.tres"
+
+[deps]
+
+source_file="res://Assets/Engine/HD/PW/tphoenix-cup(b).gif"
+dest_files=["res://.godot/imported/tphoenix-cup(b).gif-b024f73bdc740841ec25ed0c14c2b915.tres"]
+
+[params]
+
+frames_per_second=30

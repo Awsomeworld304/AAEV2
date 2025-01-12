@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://c42nutg7c4xgq"
+path="res://.godot/imported/tphoenix-handsondesk(b).gif-9c3ee39ab8f3b4d3d8ddd7e8b9a433ea.tres"
+
+[deps]
+
+source_file="res://Assets/Engine/HD/PW/tphoenix-handsondesk(b).gif"
+dest_files=["res://.godot/imported/tphoenix-handsondesk(b).gif-9c3ee39ab8f3b4d3d8ddd7e8b9a433ea.tres"]
+
+[params]
+
+frames_per_second=30

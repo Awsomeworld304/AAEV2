@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://cif3udhi1duvs"
+path="res://.godot/imported/tphoenix-coffee(b).gif-603bc3e11a92732c2bf5365544c0d9bf.tres"
+
+[deps]
+
+source_file="res://Assets/Engine/HD/PW/tphoenix-coffee(b).gif"
+dest_files=["res://.godot/imported/tphoenix-coffee(b).gif-603bc3e11a92732c2bf5365544c0d9bf.tres"]
+
+[params]
+
+frames_per_second=30

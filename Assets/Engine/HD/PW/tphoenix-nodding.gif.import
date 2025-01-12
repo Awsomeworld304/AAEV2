@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://diwkm0gkb10k1"
+path="res://.godot/imported/tphoenix-nodding.gif-c6894f4eb8af35b9dc0e08234d06bc94.tres"
+
+[deps]
+
+source_file="res://Assets/Engine/HD/PW/tphoenix-nodding.gif"
+dest_files=["res://.godot/imported/tphoenix-nodding.gif-c6894f4eb8af35b9dc0e08234d06bc94.tres"]
+
+[params]
+
+frames_per_second=30

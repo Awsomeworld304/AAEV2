@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://b7gem24k0brjn"
+path="res://.godot/imported/tphoenix-thinking(b).gif-0b33f1bc589dab09f950f1c7f2f0cab2.tres"
+
+[deps]
+
+source_file="res://Assets/Engine/HD/PW/tphoenix-thinking(b).gif"
+dest_files=["res://.godot/imported/tphoenix-thinking(b).gif-0b33f1bc589dab09f950f1c7f2f0cab2.tres"]
+
+[params]
+
+frames_per_second=30

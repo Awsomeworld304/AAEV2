@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://d0x6qvj7b1mih"
+path="res://.godot/imported/tphoenix-withtoupee.gif-5e0013e92b57d9cdccc8af8b13757ae0.tres"
+
+[deps]
+
+source_file="res://Assets/Engine/HD/PW/tphoenix-withtoupee.gif"
+dest_files=["res://.godot/imported/tphoenix-withtoupee.gif-5e0013e92b57d9cdccc8af8b13757ae0.tres"]
+
+[params]
+
+frames_per_second=30
