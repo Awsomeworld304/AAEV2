@@ -5,7 +5,7 @@ extends Control
 
 # Dict to load all assets.
 var assets:Dictionary = {
-	"Engine Fonts": "Assets/Engine/Fonts",
+	"Engine Fonts": "res://Assets/Engine/Fonts",
 	"Inline Assets": "res://Assets/Engine/Inline",
 	"PW Inline": "res://Assets/Engine/Inline/PW",
 	"Engine Scenes": "res://Scenes",
@@ -21,12 +21,13 @@ var found_error:bool = false;
 
 ## Returns True if the path is valid, otherwise false.
 func check_path(path:String) -> bool:
-	var verdict:bool = false;
+	var verdict:bool = true;
 	var dirHandle:DirAccess = DirAccess.open("res://");
+	print(dirHandle.get_directories());
 	#verdict = dirHandle != null;
-	if dirHandle.change_dir(path) != OK: printerr("Preloader -> Path (%s) is not valid!" % path);
+	if dirHandle.change_dir(path) != OK: printerr("Preloader -> Path (%s) is not valid!" % path); verdict = false;
 	print("Open Error: %s" % DirAccess.get_open_error());
-	return verdict;
+	return true;
 
 func start_load(dir_path:String) -> void:
 	var d1:PackedStringArray = DirAccess.get_files_at(dir_path);
@@ -40,7 +41,7 @@ func start_load(dir_path:String) -> void:
 	# Loads files in the root directory of our path.
 	for i:int in d1.size():
 		var path:String = dir_path + d1[i];
-		if path.get_extension() == "import": continue;
+		#if path.get_extension() == "import": continue;
 		file_paths.append(path);
 		print_debug(path);
 		ResourceLoader.load_threaded_request(path);
@@ -73,7 +74,6 @@ func _ready() -> void:
 	await anim.animation_finished;
 	total_files = file_paths.size();
 	if total_files == 0: found_error = true; done();
-	
 	done_init = true;
 	pass # Replace with function body.
 

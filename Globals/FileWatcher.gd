@@ -21,9 +21,11 @@ func check_file(file_path:String) -> bool:
 	if FileAccess.file_exists(file_path): return true;
 	return false;
 
-func save_meta() -> void:
-	var file:FileAccess = FileAccess.open(metadata_path, FileAccess.WRITE);
+func save_meta(custom_path:String = "") -> void:
+	DirAccess.remove_absolute(metadata_path if custom_path == "" else custom_path);
+	var file:FileAccess = FileAccess.open(metadata_path if custom_path == "" else custom_path, FileAccess.WRITE);
 	file.store_string(JSON.stringify(metadata));
+	file.flush();
 	file.close();
 	pass
 
@@ -38,7 +40,7 @@ func load_meta() -> void:
 
 func _get_head() -> void:
 	if !metadata: push_warning("ToolkitLoader -> Metadata is null on head script load!"); return;
-	var file:FileAccess = FileAccess.open(metadata_path + "/" + metadata.get("head_script"), FileAccess.READ);
+	var file:FileAccess = FileAccess.open(metadata_path + "/" + var_to_str(metadata.get("head_script")), FileAccess.READ);
 	print("HEAD PATH: %s" % (metadata_path + "/" + metadata.get("head_script")));
 	var json:JSON = JSON.new();
 	if json.parse(file.get_as_text()) == OK: head_script = json.data;
@@ -48,7 +50,7 @@ func _get_head() -> void:
 
 func _load_script(file_path:String) -> void:
 	if !metadata: push_warning("ToolkitLoader -> Metadata is null on script load!"); return;
-	var file:FileAccess = FileAccess.open(metadata_path + "/" + (metadata.get("head_script") as String).get_base_dir() + "/" + file_path, FileAccess.READ);
+	var file:FileAccess = FileAccess.open(metadata_path + "/" + var_to_str(metadata.get("head_script")).get_base_dir() + "/" + file_path, FileAccess.READ);
 	var json:JSON = JSON.new();
 	file.close();
 	if json.parse(file.get_as_text()) == OK: scripts.get_or_add(json.data);
@@ -57,7 +59,7 @@ func _load_script(file_path:String) -> void:
 
 func load_scripts() -> void:
 	_get_head();
-	for scr in head_script:
+	for scr:String in head_script:
 		print("ToolkitLoader -> load scripts scr: %s" % scr);
 		#_load_script(scr);
 		pass
@@ -69,5 +71,5 @@ func load_pack(metadata_file_path:String) -> void:
 	metadata_path = metadata_file_path;
 	loaded_pack.emit();
 	load_meta();
-	load_scripts();
+	#load_scripts();
 	pass

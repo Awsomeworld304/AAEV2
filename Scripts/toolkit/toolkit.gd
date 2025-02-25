@@ -7,8 +7,9 @@ extends Control
 @onready var cl_about:CanvasLayer = $about as CanvasLayer;
 
 func _ready() -> void:
+	get_window().title = "Ace Attorney Engine Toolkit";
 	get_window().size = Vector2i(1280,720);
-	get_window().position = Vector2i(300,300);
+	get_window().position = Vector2i(get_window().position.x + 100, 300);
 	FileWatcher.loaded_meta.connect(load_metadata);
 	pass
 
@@ -25,8 +26,8 @@ func load_metadata() -> void:
 	($"metadata_editor/scr_name" as LineEdit).text = FileWatcher.metadata.get("head_script");
 	($"metadata_editor/pack_ver" as LineEdit).text = var_to_str(FileWatcher.metadata.get("version"));
 	($"metadata_editor/char_list" as ItemList).clear();
-	for charitem in (FileWatcher.metadata.get("characters") as Dictionary):
-		($"metadata_editor/char_list" as ItemList).add_item(FileWatcher.metadata.get("characters").get(charitem));
+	for charitem:String in FileWatcher.metadata.get("characters"):
+		($"metadata_editor/char_list" as ItemList).add_item(var_to_str(FileWatcher.metadata.get("characters").get(charitem)));
 		pass
 	pass
 
@@ -81,10 +82,24 @@ func fix_path(fuf:String) -> String:
 
 func _on_load_pack_file_selected(path:String) -> void:
 	FileWatcher.load_pack(path);
-	($"start/loaded_file_lbl" as RichTextLabel).text = "Loaded File:\n[font_size=24][color=gray]%s[/color][/font_size]\n%s" % [fix_path(path.get_base_dir()), path.get_file()];
+	($"start/loaded_file_lbl" as RichTextLabel).text = "Loaded File:\n[font_size=30][color=gray]%s[/color][/font_size]\n%s" % [fix_path(path.get_base_dir()), path.get_file()];
 	pass # Replace with function body.
 
 
 func _on_exit_button_up() -> void:
 	LevelManager.reload(true);
+	pass # Replace with function body.
+
+
+func _on_save_meta_btn_button_up() -> void:
+	FileWatcher.metadata["name"] = ($"metadata_editor/pack_name" as LineEdit).text;
+	FileWatcher.metadata["head_script"] = ($"metadata_editor/scr_name" as LineEdit).text;
+	FileWatcher.metadata["version"] = float(($"metadata_editor/pack_ver" as LineEdit).text);
+	print("Toolkit -> Metadata: %s" % FileWatcher.metadata);
+	($"metadata_editor/save" as FileDialog).visible = true;
+	pass # Replace with function body.
+
+
+func _on_meta_save_file_selected(path:String) -> void:
+	FileWatcher.save_meta(path);
 	pass # Replace with function body.

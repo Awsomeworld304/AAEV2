@@ -31,7 +31,15 @@ func idle(animation_suffix:String = "") -> void:
 	pass
 
 func talk(animation_suffix:String = "") -> void:
-	print_debug("Character -> Talking");
+	if Settings.debug: print_debug("Character %s -> Talking" % character_name);
+	if valid_animations == null: valid_animations = animation_controller.sprite_frames.get_animation_names();
+
+	if !valid_animations.has(talk_animation_name + animation_suffix): return
+	animation_controller.animation = talk_animation_name + animation_suffix;
+	pass
+
+func object(animation_suffix:String = "") -> void:
+	if Settings.debug: print_debug("Character %s -> Objecting" % character_name);
 	if valid_animations == null: valid_animations = animation_controller.sprite_frames.get_animation_names();
 
 	if !valid_animations.has(talk_animation_name + animation_suffix): return
@@ -39,6 +47,7 @@ func talk(animation_suffix:String = "") -> void:
 	pass
 
 func custom(animation_name:String = "") -> void:
+	if Settings.debug: print_debug("Character %s -> %s" % [character_name, animation_name]);
 	if valid_animations == null: valid_animations = animation_controller.sprite_frames.get_animation_names();
 
 	if !valid_animations.has(animation_name):

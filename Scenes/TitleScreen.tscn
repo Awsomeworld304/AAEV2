@@ -236,11 +236,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5mcot")
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
-
-[node name="SFX" type="AudioStreamPlayer" parent="."]
-bus = &"SFX"
-
 [node name="FallbackBG" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 1920.0
@@ -287,11 +282,6 @@ libraries = {
 
 [node name="debug_menu" type="CanvasLayer" parent="."]
 visible = false
-
-[node name="bg_tint" type="ColorRect" parent="debug_menu"]
-offset_right = 1920.0
-offset_bottom = 1080.0
-color = Color(0, 0.0117647, 0.160784, 0.545098)
 
 [node name="menu" type="Panel" parent="debug_menu"]
 clip_children = 2
@@ -340,4 +330,20 @@ theme_override_fonts/font = ExtResource("1_sbaqb")
 theme_override_font_sizes/font_size = 32
 text = "Go to Modding Toolkit"
 
+[node name="fullscr" type="Button" parent="debug_menu/menu"]
+offset_left = 498.0
+offset_top = 213.0
+offset_right = 688.0
+offset_bottom = 277.0
+text = "To 1920x1080 FullScrn"
+
+[node name="windowed" type="Button" parent="debug_menu/menu"]
+offset_left = 52.0
+offset_top = 213.0
+offset_right = 242.0
+offset_bottom = 277.0
+text = "To 1280x720 Windowed"
+
 [connection signal="button_up" from="debug_menu/menu/go_to_toolkit" to="." method="_on_go_to_toolkit_button_up"]
+[connection signal="button_up" from="debug_menu/menu/fullscr" to="." method="_on_fullscr_button_up"]
+[connection signal="button_up" from="debug_menu/menu/windowed" to="." method="_on_windowed_button_up"]

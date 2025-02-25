@@ -25,7 +25,7 @@ func _enter() -> void:
 		# Cleanly fade out.
 		anim.play("end");
 		await anim.animation_finished;
-		LevelManager.change_level("Courtroom");
+		LevelManager.change_level("MainMenu");
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -46,3 +46,16 @@ func _process(_delta:float) -> void:
 func _on_go_to_toolkit_button_up() -> void:
 	LevelManager.change_level("toolkit/toolkit");
 	pass
+
+
+func _on_fullscr_button_up() -> void:
+	Settings.change("resolution", "1920", "1080");
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN);
+	pass # Replace with function body.
+
+
+func _on_windowed_button_up() -> void:
+	Settings.change("resolution", "1280", "720");
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED);
+	get_window().position = Vector2i(get_window().position.x + 100, 300);
+	pass # Replace with function body.
