@@ -1,0 +1,8 @@
+{
+	"name": "TestPack",
+	"head_script": "scripts/main.ace",
+	"version": 0,
+	"characters": {
+		"0": "tester"
+	}
+}

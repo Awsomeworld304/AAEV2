@@ -130,7 +130,7 @@ region = Rect2(3840, 1080, 1920, 1080)
 [resource]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 48.0,
 "texture": SubResource("AtlasTexture_bd73i")
 }, {
 "duration": 1.0,
@@ -142,7 +142,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8bvbx")
 }, {
-"duration": 1.0,
+"duration": 48.0,
 "texture": SubResource("AtlasTexture_4qq1f")
 }, {
 "duration": 1.0,
@@ -158,8 +158,8 @@ animations = [{
 "texture": SubResource("AtlasTexture_7m2wo")
 }],
 "loop": true,
-"name": &"idle",
-"speed": 8.0
+"name": &"default",
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -229,6 +229,6 @@ animations = [{
 "texture": SubResource("AtlasTexture_oj8m3")
 }],
 "loop": true,
-"name": &"talk-normal",
+"name": &"talk",
 "speed": 8.0
 }]

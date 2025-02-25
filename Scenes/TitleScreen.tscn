@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://nwfhwulwwnl8"]
+[gd_scene load_steps=16 format=3 uid="uid://nwfhwulwwnl8"]
 
 [ext_resource type="Script" path="res://Scripts/TitleScreen.gd" id="1_5mcot"]
 [ext_resource type="FontFile" uid="uid://c38n0e1lyr6sm" path="res://Assets/Engine/Fonts/HD-Textbox.otf" id="1_sbaqb"]
@@ -72,6 +72,57 @@ tracks/3/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_rqrwn"]
+resource_name = "end"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CL/EngineLogo:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CL/EnterText:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CourtBG:material:shader_parameter/strength")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [4, 4]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CourtBG:material:shader_parameter/darkness")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.55, 0.163]
+}
+
 [sub_resource type="Animation" id="Animation_4252d"]
 resource_name = "entered"
 tracks/0/type = "value"
@@ -81,10 +132,10 @@ tracks/0/path = NodePath("CL/EnterText:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_lwl03"]
@@ -158,10 +209,23 @@ tracks/3/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sp6cp"]
 _data = {
 "RESET": SubResource("Animation_emuet"),
+"end": SubResource("Animation_rqrwn"),
 "entered": SubResource("Animation_4252d"),
 "idle": SubResource("Animation_lwl03"),
 "start": SubResource("Animation_akobc")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3emu"]
+bg_color = Color(0, 0.00704956, 0.0820313, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+corner_detail = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_bvy1p"]
+font = ExtResource("1_sbaqb")
+font_size = 24
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -220,3 +284,60 @@ scroll_active = false
 libraries = {
 "": SubResource("AnimationLibrary_sp6cp")
 }
+
+[node name="debug_menu" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="bg_tint" type="ColorRect" parent="debug_menu"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0.0117647, 0.160784, 0.545098)
+
+[node name="menu" type="Panel" parent="debug_menu"]
+clip_children = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -370.0
+offset_top = -369.0
+offset_right = 370.0
+offset_bottom = 369.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f3emu")
+
+[node name="bar" type="ColorRect" parent="debug_menu/menu"]
+layout_mode = 0
+offset_right = 740.0
+offset_bottom = 29.0
+color = Color(0.282745, 0.494257, 0.664063, 1)
+
+[node name="title" type="Label" parent="debug_menu/menu"]
+layout_mode = 0
+offset_left = 34.0
+offset_right = 714.0
+offset_bottom = 29.0
+text = "Debug Menu"
+label_settings = SubResource("LabelSettings_bvy1p")
+horizontal_alignment = 1
+
+[node name="go_to_toolkit" type="Button" parent="debug_menu/menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = -284.0
+offset_right = 214.0
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_sbaqb")
+theme_override_font_sizes/font_size = 32
+text = "Go to Modding Toolkit"
+
+[connection signal="button_up" from="debug_menu/menu/go_to_toolkit" to="." method="_on_go_to_toolkit_button_up"]

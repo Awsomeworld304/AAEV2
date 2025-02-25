@@ -1,0 +1,11 @@
+[
+	{
+		"story_name": "Test Story"
+	},
+	{
+		"character": "pw",
+		"animation": "talk",
+		"text": "Hey you!",
+		"music": "Objection"
+	}
+]

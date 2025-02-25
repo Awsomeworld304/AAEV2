@@ -1,0 +1,13 @@
+{
+	"meta": {
+		"place": "courtroom",
+		"music": "trial",
+		"cam_start": "def"
+	}
+    "0": {
+        "character": "tester",
+        "to_self": false,
+        "pose": "talk",
+        "text": "Hey!"
+    }
+}

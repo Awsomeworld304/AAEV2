@@ -14,7 +14,7 @@ config/name="AAEV2"
 config/description="Ace Attorney Engine V2.
 V1 has been lost to time."
 config/version="0.0.0.1"
-run/main_scene="res://Scenes/Story.tscn"
+run/main_scene="res://Globals/Preloader.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -24,6 +24,16 @@ Settings="*res://Globals/Settings.gd"
 LevelManager="*res://Globals/LevelManager.gd"
 StoryManager="*res://Globals/StoryManager.gd"
 GameManager="*res://Globals/GameManager.gd"
+FileWatcher="*res://Globals/FileWatcher.gd"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+gdscript/warnings/inferred_declaration=1
+gdscript/warnings/unsafe_property_access=1
+gdscript/warnings/unsafe_method_access=1
+gdscript/warnings/unsafe_cast=1
+gdscript/warnings/unsafe_call_argument=1
 
 [display]
 
@@ -53,4 +63,12 @@ Fullscreen={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194342,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
+}
+Present={
+"deadzone": 0.5,
+"events": []
+}
+Press={
+"deadzone": 0.5,
+"events": []
 }

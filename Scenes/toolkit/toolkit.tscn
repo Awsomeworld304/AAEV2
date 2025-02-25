@@ -1,0 +1,509 @@
+[gd_scene load_steps=39 format=3 uid="uid://ca4mjgquepg2o"]
+
+[ext_resource type="Script" path="res://Scripts/toolkit/toolkit.gd" id="1_p3mf2"]
+[ext_resource type="Material" uid="uid://bbqxyuse7py4a" path="res://Assets/Engine/Shaders/TitleScreenBlur.tres" id="2_yy084"]
+[ext_resource type="Texture2D" uid="uid://b6jwmmw5c4yma" path="res://Assets/Engine/Inline/CourtRoom.png" id="3_km3wn"]
+[ext_resource type="Texture2D" uid="uid://cuvb81sdktysb" path="res://Assets/Engine/Images/dumb/dog/frame_00_delay-0.07s.png" id="5_1yyjb"]
+[ext_resource type="FontFile" uid="uid://c38n0e1lyr6sm" path="res://Assets/Engine/Fonts/HD-Textbox.otf" id="5_dcumv"]
+[ext_resource type="Texture2D" uid="uid://dehgf27y8clcl" path="res://Assets/Engine/Images/dumb/dog/frame_01_delay-0.06s.png" id="6_h1pyi"]
+[ext_resource type="Texture2D" uid="uid://30mgyw3vyyc0" path="res://Assets/Engine/Images/dumb/dog/frame_02_delay-0.07s.png" id="7_7y7ix"]
+[ext_resource type="Texture2D" uid="uid://c7gcqfjh4wn7w" path="res://Assets/Engine/Images/dumb/dog/frame_03_delay-0.06s.png" id="8_dgtb7"]
+[ext_resource type="Texture2D" uid="uid://7b5ex1g0ehqj" path="res://Assets/Engine/Images/dumb/dog/frame_04_delay-0.07s.png" id="9_4m7df"]
+[ext_resource type="Texture2D" uid="uid://du234bu53s2en" path="res://Assets/Engine/Images/dumb/dog/frame_05_delay-0.07s.png" id="10_phdoq"]
+[ext_resource type="Texture2D" uid="uid://csriryfdnf4mg" path="res://Assets/Engine/Images/dumb/dog/frame_06_delay-0.06s.png" id="11_5p2tb"]
+[ext_resource type="Texture2D" uid="uid://dakcftkrhnqt1" path="res://Assets/Engine/Images/dumb/dog/frame_07_delay-0.07s.png" id="12_6w2qa"]
+[ext_resource type="Texture2D" uid="uid://2gwkrvuewjxl" path="res://Assets/Engine/Images/dumb/dog/frame_08_delay-0.06s.png" id="13_4hyam"]
+[ext_resource type="Texture2D" uid="uid://du4li2prelt1o" path="res://Assets/Engine/Images/dumb/dog/frame_09_delay-0.07s.png" id="14_wv7fv"]
+[ext_resource type="Texture2D" uid="uid://bupopd5aywv4i" path="res://Assets/Engine/Images/dumb/dog/frame_10_delay-0.07s.png" id="15_pmhk3"]
+[ext_resource type="Texture2D" uid="uid://dgl110eo7vep3" path="res://Assets/Engine/Images/dumb/dog/frame_11_delay-0.06s.png" id="16_3ng5x"]
+[ext_resource type="Texture2D" uid="uid://bv2fcohv4f08c" path="res://Assets/Engine/Images/dumb/dog/frame_12_delay-0.07s.png" id="17_lveal"]
+[ext_resource type="Texture2D" uid="uid://bjm128vi8llaq" path="res://Assets/Engine/Images/dumb/dog/frame_13_delay-0.06s.png" id="18_stfk1"]
+[ext_resource type="Texture2D" uid="uid://dqk4hr6fbwaq6" path="res://Assets/Engine/Images/dumb/dog/frame_14_delay-0.07s.png" id="19_gg8jj"]
+[ext_resource type="Texture2D" uid="uid://b0r3356k6tefa" path="res://Assets/Engine/Images/dumb/dog/frame_15_delay-0.06s.png" id="20_2g56v"]
+[ext_resource type="Texture2D" uid="uid://xeqdmmmakevy" path="res://Assets/Engine/Images/dumb/dog/frame_16_delay-0.07s.png" id="21_esj4r"]
+[ext_resource type="Texture2D" uid="uid://casgxy0g23dxq" path="res://Assets/Engine/Images/dumb/dog/frame_17_delay-0.07s.png" id="22_5aya0"]
+[ext_resource type="Texture2D" uid="uid://bjgdafhykhopr" path="res://Assets/Engine/Images/dumb/dog/frame_18_delay-0.06s.png" id="23_04f0i"]
+[ext_resource type="Texture2D" uid="uid://dyl20sf4ho22f" path="res://Assets/Engine/Images/dumb/dog/frame_19_delay-0.07s.png" id="24_btxe0"]
+[ext_resource type="Texture2D" uid="uid://dxkt6hn1dvvdy" path="res://Assets/Engine/Images/dumb/dog/frame_20_delay-0.06s.png" id="25_q72ee"]
+[ext_resource type="Texture2D" uid="uid://cj6og1i8jxxp" path="res://Assets/Engine/Images/dumb/dog/frame_21_delay-0.07s.png" id="26_md15l"]
+[ext_resource type="Texture2D" uid="uid://7xekq3witrp8" path="res://Assets/Engine/Images/dumb/dog/frame_22_delay-0.07s.png" id="27_gxseo"]
+[ext_resource type="Texture2D" uid="uid://dk0c3f10ccsx1" path="res://Assets/Engine/Images/dumb/dog/frame_23_delay-0.06s.png" id="28_sndtf"]
+[ext_resource type="Texture2D" uid="uid://dopygx8711duw" path="res://Assets/Engine/Images/dumb/dog/frame_24_delay-0.07s.png" id="29_bc061"]
+[ext_resource type="Texture2D" uid="uid://bqubto8v5raeh" path="res://Assets/Engine/Images/dumb/dog/frame_25_delay-0.06s.png" id="30_g0dwi"]
+[ext_resource type="Texture2D" uid="uid://cl178hn516aip" path="res://Assets/Engine/Images/dumb/dog/frame_26_delay-0.07s.png" id="31_223nh"]
+[ext_resource type="Texture2D" uid="uid://ow6e3f3ajywy" path="res://Assets/Engine/Images/dumb/dog/frame_27_delay-0.07s.png" id="32_yblrk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0es4a"]
+atlas = ExtResource("3_km3wn")
+region = Rect2(9600, 0, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jc6sx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0es4a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5jdu"]
+bg_color = Color(0, 0, 0, 0.454902)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_rsukn"]
+font = ExtResource("5_dcumv")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_w7wbo"]
+font = ExtResource("5_dcumv")
+font_size = 48
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8o2cd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_1yyjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_h1pyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7y7ix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dgtb7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4m7df")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_phdoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5p2tb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6w2qa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_4hyam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_wv7fv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_pmhk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3ng5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_lveal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_stfk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_gg8jj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_2g56v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_esj4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_5aya0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_04f0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_btxe0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_q72ee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_md15l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_gxseo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_sndtf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_bc061")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_g0dwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_223nh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_yblrk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p3mf2")
+
+[node name="fallback" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.223022, 0.312906, 0.453125, 1)
+
+[node name="courtbg" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+material = ExtResource("2_yy084")
+position = Vector2(576.333, 324.5)
+scale = Vector2(0.600926, 0.600926)
+sprite_frames = SubResource("SpriteFrames_jc6sx")
+
+[node name="title" type="CanvasLayer" parent="."]
+
+[node name="bg" type="ColorRect" parent="title"]
+offset_right = 1920.0
+offset_bottom = 63.0
+color = Color(0, 0, 0, 0.603922)
+
+[node name="tabs" type="TabBar" parent="title"]
+offset_right = 1920.0
+offset_bottom = 63.0
+theme_override_fonts/font = ExtResource("5_dcumv")
+theme_override_font_sizes/font_size = 32
+current_tab = 0
+tab_alignment = 1
+scrolling_enabled = false
+tab_count = 5
+tab_0/title = "Start"
+tab_1/title = "Metadata Editor"
+tab_2/title = "Script Editor"
+tab_3/title = "Character Editor"
+tab_3/disabled = true
+tab_4/title = "About"
+
+[node name="exit" type="Button" parent="title"]
+offset_left = 1850.0
+offset_right = 1920.0
+offset_bottom = 63.0
+theme_override_colors/font_hover_pressed_color = Color(0.757813, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.699219, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_dcumv")
+theme_override_font_sizes/font_size = 50
+text = "X"
+
+[node name="version" type="RichTextLabel" parent="title"]
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 444.0
+offset_bottom = 63.0
+theme_override_fonts/normal_font = ExtResource("5_dcumv")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[wave freq=5 amp=32 connected=1]Ver. [color=steelblue]0[color=deep_sky_blue].[color=royal_blue]1"
+
+[node name="start" type="CanvasLayer" parent="."]
+
+[node name="load_pack" type="FileDialog" parent="start"]
+title = "Open a File"
+initial_position = 1
+size = Vector2i(600, 400)
+min_size = Vector2i(600, 400)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.acemeta")
+
+[node name="save_save" type="FileDialog" parent="start"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(324, 380)
+ok_button_text = "Save"
+access = 2
+filters = PackedStringArray("*.acemeta")
+
+[node name="choose_btn" type="Button" parent="start"]
+offset_left = 24.0
+offset_top = 415.0
+offset_right = 398.0
+offset_bottom = 481.0
+theme_override_fonts/font = ExtResource("5_dcumv")
+theme_override_font_sizes/font_size = 48
+text = "Choose Pack"
+
+[node name="save_btn" type="Button" parent="start"]
+visible = false
+offset_left = 24.0
+offset_top = 252.0
+offset_right = 242.0
+offset_bottom = 295.0
+theme_override_fonts/font = ExtResource("5_dcumv")
+theme_override_font_sizes/font_size = 32
+text = "Save Pack"
+
+[node name="loaded_file_lbl" type="RichTextLabel" parent="start"]
+offset_left = 24.0
+offset_top = 140.0
+offset_right = 708.0
+offset_bottom = 313.0
+theme_override_fonts/normal_font = ExtResource("5_dcumv")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "Loaded File: "
+scroll_active = false
+
+[node name="info_panel" type="Panel" parent="start"]
+offset_left = 960.0
+offset_top = 79.0
+offset_right = 1864.0
+offset_bottom = 1024.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q5jdu")
+
+[node name="info" type="RichTextLabel" parent="start/info_panel"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 21.0
+offset_right = 890.0
+offset_bottom = 918.0
+theme_override_fonts/normal_font = ExtResource("5_dcumv")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]Welcome to the Ace Attorney Engine Toolkit![/center]
+
+To start, choose an acemeta file.
+
+
+[center]--- File Types ---[/center]
+
+[center]acemeta[/center]
+[font_size=30]The metadata file at the root of the pack.[/font_size]
+
+[center]ace[/center]
+[font_size=30]Script file anywhere in the pack structure, recommended to add it to the metadata file.[/font_size]
+
+[center]--- Metadata ---[/center]
+[font_size=30]The metadata file is really important as it defines your storypack.[/font_size]
+
+[center]--- Scripts ---[/center]
+[font_size=30]There is a head script, and the remaining story scripts.
+The head script is like the metadata script for the story order and other elements.[/font_size]
+
+[center]--- Characters ---[/center]
+[center]--- Scenes ---[/center]
+
+[center]--- Advanced Notes ---[/center]"
+
+[node name="metadata_editor" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="load" type="FileDialog" parent="metadata_editor"]
+auto_translate_mode = 1
+title = "Open a File"
+initial_position = 1
+size = Vector2i(324, 380)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.acemeta")
+
+[node name="title" type="Label" parent="metadata_editor"]
+offset_left = 16.0
+offset_top = 79.0
+offset_right = 529.0
+offset_bottom = 144.0
+text = "Metadata Editor"
+label_settings = SubResource("LabelSettings_rsukn")
+
+[node name="info" type="RichTextLabel" parent="metadata_editor"]
+offset_left = 1153.0
+offset_top = 189.0
+offset_right = 1880.0
+offset_bottom = 1017.0
+theme_override_fonts/normal_font = ExtResource("5_dcumv")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]Info[/center]
+[font_size=32]
+Pack Name
+The name of the AAE Pack.
+
+Head Script
+The path to the head script.
+The head script is the file that lists and orders the story scripts.
+Go to the Script Editor to edit this file.
+
+Pack Version
+The current version of the pack.
+Default versioning is Major.Minor but you can do whatever you see fit.
+
+Character List
+List of the registered characters in the AAE Pack.
+This is only editable in the Character Editor.
+[/font_size]"
+scroll_active = false
+
+[node name="packnamelbl" type="Label" parent="metadata_editor"]
+offset_left = 16.0
+offset_top = 189.0
+offset_right = 321.0
+offset_bottom = 238.0
+text = "Pack Name: "
+label_settings = SubResource("LabelSettings_w7wbo")
+
+[node name="scrlbl" type="Label" parent="metadata_editor"]
+offset_left = 17.0
+offset_top = 415.0
+offset_right = 335.0
+offset_bottom = 464.0
+text = "Head Script: "
+label_settings = SubResource("LabelSettings_w7wbo")
+
+[node name="verlbl" type="Label" parent="metadata_editor"]
+offset_left = 17.0
+offset_top = 649.0
+offset_right = 367.0
+offset_bottom = 698.0
+text = "Pack Version: "
+label_settings = SubResource("LabelSettings_w7wbo")
+
+[node name="charlbl" type="Label" parent="metadata_editor"]
+offset_left = 600.0
+offset_top = 189.0
+offset_right = 882.0
+offset_bottom = 238.0
+text = "Characters:"
+label_settings = SubResource("LabelSettings_w7wbo")
+
+[node name="pack_name" type="LineEdit" parent="metadata_editor"]
+offset_left = 16.0
+offset_top = 260.0
+offset_right = 444.0
+offset_bottom = 301.0
+theme_override_fonts/font = ExtResource("5_dcumv")
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Pack Name"
+
+[node name="scr_name" type="LineEdit" parent="metadata_editor"]
+offset_left = 18.0
+offset_top = 480.0
+offset_right = 446.0
+offset_bottom = 521.0
+theme_override_fonts/font = ExtResource("5_dcumv")
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Script Path"
+
+[node name="pack_ver" type="LineEdit" parent="metadata_editor"]
+offset_left = 17.0
+offset_top = 722.0
+offset_right = 437.0
+offset_bottom = 763.0
+theme_override_fonts/font = ExtResource("5_dcumv")
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Version Number"
+
+[node name="char_list" type="ItemList" parent="metadata_editor"]
+offset_left = 600.0
+offset_top = 254.0
+offset_right = 977.0
+offset_bottom = 848.0
+
+[node name="save_meta_btn" type="Button" parent="metadata_editor"]
+offset_left = 24.0
+offset_top = 997.0
+offset_right = 300.0
+offset_bottom = 1045.0
+theme_override_fonts/font = ExtResource("5_dcumv")
+theme_override_font_sizes/font_size = 48
+text = "Save Metadata"
+
+[node name="script_editor" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="load" type="FileDialog" parent="script_editor"]
+auto_translate_mode = 1
+title = "Open a File"
+initial_position = 1
+size = Vector2i(324, 380)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.acemeta")
+
+[node name="save" type="FileDialog" parent="script_editor"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(324, 380)
+ok_button_text = "Save"
+access = 2
+filters = PackedStringArray("*.acemeta")
+
+[node name="character_editor" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="about" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="info" type="RichTextLabel" parent="about"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -497.0
+offset_top = -394.5
+offset_right = 497.0
+offset_bottom = 394.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("5_dcumv")
+theme_override_fonts/mono_font = ExtResource("5_dcumv")
+theme_override_fonts/italics_font = ExtResource("5_dcumv")
+theme_override_fonts/bold_italics_font = ExtResource("5_dcumv")
+theme_override_fonts/bold_font = ExtResource("5_dcumv")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center][font_size=128][rainbow freq=0.2][wave]About[/wave][/rainbow][/font_size]
+
+
+Written with love by JamesTech4849
+
+Found a bug? Report it on my [url=https://github.com/Awsomeworld304/AAEV2]GitHub![/url]
+
+
+
+
+
+[wave]I hope you enjoy this![/wave]"
+
+[node name="dog" type="AnimatedSprite2D" parent="about"]
+position = Vector2(1697, 313)
+scale = Vector2(0.734286, 0.734286)
+sprite_frames = SubResource("SpriteFrames_8o2cd")
+autoplay = "default"
+frame_progress = 0.902524
+
+[connection signal="tab_changed" from="title/tabs" to="." method="_on_tabs_tab_changed"]
+[connection signal="button_up" from="title/exit" to="." method="_on_exit_button_up"]
+[connection signal="file_selected" from="start/load_pack" to="." method="_on_load_pack_file_selected"]
+[connection signal="button_up" from="start/choose_btn" to="." method="_on_choose_btn_button_up"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://drjn46eq60wlr"]
+
+[ext_resource type="Script" path="res://Scripts/scene_editor.gd" id="1_q134e"]
+
+[node name="SceneEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q134e")
+
+[node name="bg" type="CanvasLayer" parent="."]
+
+[node name="bg-color" type="ColorRect" parent="bg"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="main" type="CanvasLayer" parent="."]

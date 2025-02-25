@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c12vbrbaujyoc"]
+
+[ext_resource type="SpriteFrames" uid="uid://uaorvhwvm4bf" path="res://Objects/PW/PW.tres" id="1_4scbu"]
+[ext_resource type="Script" path="res://Objects/Characters/pw.gd" id="1_od7j8"]
+
+[node name="Pw" type="Node2D"]
+script = ExtResource("1_od7j8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_4scbu")
+autoplay = "default"
+frame_progress = 0.146698
+centered = false
